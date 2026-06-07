@@ -1,449 +1,509 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Etchepare Informatique — Initiation numérique à domicile</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <title>Etchepare Informatique — Initiation numérique à domicile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  :root {
-    --navy:      #1A2035;
-    --navy-mid:  #232d47;
-    --gold:      #A89870;
-    --gold-lite: #C8AD7A;
-    --gold-pale: #E8D9B5;
-    --slate:     #7A8BAA;
-    --slate-mid: #8A96A8;
-    --cream:     #F8F4EC;
-    --white:     #FFFFFF;
-  }
+    :root {
+      --navy: #1A2035;
+      --navy-mid: #232d47;
+      --gold: #A89870;
+      --gold-lite: #C8AD7A;
+      --gold-pale: #E8D9B5;
+      --slate: #7A8BAA;
+      --slate-mid: #8A96A8;
+      --cream: #F8F4EC;
+      --white: #FFFFFF;
+    }
 
-  html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  body {
-    font-family: 'Lora', Georgia, serif;
-    background: var(--cream);
-    color: var(--navy);
-    overflow-x: hidden;
-  }
+    body {
+      font-family: 'Lora', Georgia, serif;
+      background: var(--cream);
+      color: var(--navy);
+      overflow-x: hidden;
+    }
 
-  /* ── HERO ── */
-  .hero {
-    background: var(--navy);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 4rem 2rem;
-    position: relative;
-    overflow: hidden;
-  }
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
 
-  .hero::before {
-    content: 'E';
-    position: absolute;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(200px, 40vw, 480px);
-    font-weight: 600;
-    color: var(--gold-pale);
-    opacity: 0.04;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    line-height: 1;
-    user-select: none;
-  }
+    .hero::before {
+      content: 'E';
+      position: absolute;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(200px, 40vw, 480px);
+      font-weight: 600;
+      color: var(--gold-pale);
+      opacity: 0.04;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      line-height: 1;
+      user-select: none;
+    }
 
-  .hero-top-bar {
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--gold);
-  }
+    .hero-top-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gold);
+    }
 
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    animation: fadeUp 1s ease both;
-  }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      animation: fadeUp 1s ease both;
+    }
 
-  .hero-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.8rem, 8vw, 5.5rem);
-    font-weight: 600;
-    color: var(--gold-pale);
-    letter-spacing: 0.18em;
-    line-height: 1;
-  }
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 600;
+      color: var(--gold-pale);
+      letter-spacing: 0.18em;
+      line-height: 1;
+    }
 
-  .hero-sub {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(0.65rem, 2vw, 1.2rem);
-    font-weight: 400;
-    color: var(--gold);
-    letter-spacing: 0.38em;
-    text-transform: uppercase;
-    margin-top: 0.6rem;
-  }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(0.65rem, 2vw, 1.2rem);
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      margin-top: 0.6rem;
+    }
 
-  .hero-rule {
-    width: 60px;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.5;
-    margin: 2rem auto;
-  }
+    .hero-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+      margin: 2rem auto;
+    }
 
-  .hero-tagline {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.1rem, 3vw, 1.5rem);
-    font-style: italic;
-    color: var(--slate);
-    line-height: 1.5;
-  }
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-style: italic;
+      color: var(--slate);
+      line-height: 1.5;
+    }
 
-  .hero-zone {
-    margin-top: 1.5rem;
-    font-family: 'Lora', serif;
-    font-size: 0.8rem;
-    color: var(--slate-mid);
-    letter-spacing: 0.12em;
-  }
+    .hero-zone {
+      margin-top: 1.5rem;
+      font-family: 'Lora', serif;
+      font-size: 0.8rem;
+      color: var(--slate-mid);
+      letter-spacing: 0.12em;
+    }
 
-  .hero-cta {
-    margin-top: 2.5rem;
-    display: inline-block;
-    padding: 0.85rem 2.2rem;
-    border: 1px solid var(--gold);
-    color: var(--gold-pale);
-    font-family: 'Lora', serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.12em;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: background 0.3s, color 0.3s;
-  }
+    .hero-cta {
+      margin-top: 2.5rem;
+      display: inline-block;
+      padding: 0.85rem 2.2rem;
+      border: 1px solid var(--gold);
+      color: var(--gold-pale);
+      font-family: 'Lora', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background 0.3s, color 0.3s;
+    }
 
-  .hero-cta:hover {
-    background: var(--gold);
-    color: var(--navy);
-  }
+    .hero-cta:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
 
-  /* ── SERVICES ── */
-  .section {
-    padding: 6rem 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-  }
+    /* ── SERVICES ── */
+    .section {
+      padding: 6rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-  .section-label {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.6rem;
-  }
+    .section-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
 
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 500;
-    color: var(--navy);
-    line-height: 1.15;
-    margin-bottom: 1rem;
-  }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
 
-  .section-rule {
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
-    margin-bottom: 3rem;
-  }
+    .section-rule {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin-bottom: 3rem;
+    }
 
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-  }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
 
-  .service-card {
-    padding: 2rem 1.5rem;
-    border: 1px solid rgba(168,152,112,0.25);
-    background: var(--white);
-    position: relative;
-    transition: border-color 0.3s, transform 0.3s;
-    animation: fadeUp 0.8s ease both;
-  }
+    .service-card {
+      padding: 2rem 1.5rem;
+      border: 1px solid rgba(168, 152, 112, 0.25);
+      background: var(--white);
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+      animation: fadeUp 0.8s ease both;
+    }
 
-  .service-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-4px);
-  }
+    .service-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
 
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px; height: 0;
-    background: var(--gold);
-    transition: height 0.3s;
-  }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--gold);
+      transition: height 0.3s;
+    }
 
-  .service-card:hover::before { height: 100%; }
+    .service-card:hover::before {
+      height: 100%;
+    }
 
-  .service-icon {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--gold);
-    opacity: 0.5;
-    line-height: 1;
-    margin-bottom: 1rem;
-  }
+    .service-icon {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--gold);
+      opacity: 0.5;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
 
-  .service-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
-    font-weight: 500;
-    color: var(--navy);
-    margin-bottom: 0.5rem;
-  }
+    .service-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
 
-  .service-desc {
-    font-size: 0.82rem;
-    color: var(--slate);
-    line-height: 1.7;
-  }
+    .service-desc {
+      font-size: 0.82rem;
+      color: var(--slate);
+      line-height: 1.7;
+    }
 
-  /* ── PROMISE BAND ── */
-  .promise-band {
-    background: var(--navy);
-    padding: 5rem 2rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
+    /* ── PROMISE BAND ── */
+    .promise-band {
+      background: var(--navy);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-  .promise-band::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.3;
-  }
+    .promise-band::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.3;
+    }
 
-  .promise-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
-    font-style: italic;
-    color: var(--gold-pale);
-    margin: 0 auto;
-    line-height: 1.5;
-  }
+    .promise-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+      font-style: italic;
+      color: var(--gold-pale);
+      margin: 0 auto;
+      line-height: 1.5;
+    }
 
-  .promise-author {
-    margin-top: 1.5rem;
-    font-family: 'Lora', serif;
-    font-size: 0.75rem;
-    color: var(--slate-mid);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
+    .promise-author {
+      margin-top: 1.5rem;
+      font-family: 'Lora', serif;
+      font-size: 0.75rem;
+      color: var(--slate-mid);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
 
-  /* ── CONTACT ── */
-  .contact-section {
-    padding: 6rem 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
+    /* ── CONTACT ── */
+    .contact-section {
+      padding: 6rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
-  .contact-items {
-    margin-top: 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: center;
-  }
+    .contact-items {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+    }
 
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-  }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
 
-  .contact-label {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    min-width: 40px;
-    text-align: right;
-  }
+    .contact-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      min-width: 40px;
+      text-align: right;
+    }
 
-  .contact-value {
-    font-family: 'Lora', serif;
-    font-size: 1rem;
-    color: var(--navy);
-  }
+    .contact-value {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      color: var(--navy);
+    }
 
-  .contact-value a {
-    color: var(--navy);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(168,152,112,0.4);
-    transition: border-color 0.2s;
-  }
+    .contact-value a {
+      color: var(--navy);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(168, 152, 112, 0.4);
+      transition: border-color 0.2s;
+    }
 
-  .contact-value a:hover { border-color: var(--gold); }
+    .contact-value a:hover {
+      border-color: var(--gold);
+    }
 
-  .contact-divider {
-    width: 1px;
-    height: 24px;
-    background: var(--gold);
-    opacity: 0.3;
-  }
+    .contact-divider {
+      width: 1px;
+      height: 24px;
+      background: var(--gold);
+      opacity: 0.3;
+    }
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy);
-    padding: 2rem;
-    text-align: center;
-  }
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 2rem;
+      text-align: center;
+    }
 
-  .footer-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    color: var(--gold-pale);
-    letter-spacing: 0.2em;
-  }
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--gold-pale);
+      letter-spacing: 0.2em;
+    }
 
-  .footer-sub {
-    margin-top: 0.4rem;
-    font-size: 0.72rem;
-    color: var(--slate-mid);
-    letter-spacing: 0.1em;
-  }
+    .footer-sub {
+      margin-top: 0.4rem;
+      font-size: 0.72rem;
+      color: var(--slate-mid);
+      letter-spacing: 0.1em;
+    }
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
 
-  .service-card:nth-child(1) { animation-delay: 0.1s; }
-  .service-card:nth-child(2) { animation-delay: 0.2s; }
-  .service-card:nth-child(3) { animation-delay: 0.3s; }
-  .service-card:nth-child(4) { animation-delay: 0.4s; }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 600px) {
-    .services-grid { grid-template-columns: 1fr; }
-    .contact-item { flex-direction: column; gap: 0.3rem; text-align: center; }
-    .contact-label { text-align: center; min-width: unset; }
-    .contact-divider { display: none; }
-  }
-</style>
+    .service-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .service-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .service-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .service-card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-item {
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: center;
+      }
+
+      .contact-label {
+        text-align: center;
+        min-width: unset;
+      }
+
+      .contact-divider {
+        display: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-top-bar"></div>
-  <div class="hero-content">
-    <div class="hero-name">ETCHEPARE</div>
-    <div class="hero-sub">Informatique</div>
-    <div class="hero-rule"></div>
-    <div class="hero-tagline">Assistance et initiation numérique à domicile, en toute patience</div>
-    <div class="hero-zone">Pays Basque &amp; Sud des Landes</div>
-    <a href="#contact" class="hero-cta">Me contacter</a>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-top-bar"></div>
+    <div class="hero-content">
+      <div class="hero-name">ETCHEPARE</div>
+      <div class="hero-sub">Informatique</div>
+      <div class="hero-rule"></div>
+      <div class="hero-tagline">Assistance et initiation numérique à domicile, en toute patience</div>
+      <div class="hero-zone">Pays Basque &amp; Sud des Landes</div>
+      <a href="#contact" class="hero-cta">Me contacter</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="section-label">Ce que je propose</div>
+    <h2 class="section-title">Des services pensés<br>pour vous</h2>
+    <div class="section-rule"></div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">01</div>
+        <div class="service-name">Smartphone, tablette &amp; ordinateur</div>
+        <div class="service-desc">Prise en main de votre appareil, réglages, applications du quotidien — à votre rythme.
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">02</div>
+        <div class="service-name">Messagerie, photos &amp; visioappel</div>
+        <div class="service-desc">Rester en contact avec vos proches, partager vos photos, appeler en vidéo.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">03</div>
+        <div class="service-name">Démarches en ligne &amp; Doctolib</div>
+        <div class="service-desc">Prise de rendez-vous médicaux, impôts, Ameli, CAF — les services essentiels
+          simplifiés.</div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">04</div>
+        <div class="service-name">Sécurité &amp; mots de passe</div>
+        <div class="service-desc">Reconnaître les arnaques, sécuriser vos comptes, naviguer sereinement sur internet.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROMISE -->
+  <div class="promise-band">
+    <div class="promise-text">« À votre rythme, en toute patience — je m'adapte à vous, pas l'inverse. »</div>
+    <div class="promise-author">Lilian Etchepare &mdash; Votre intervenant</div>
   </div>
-</section>
 
-<!-- SERVICES -->
-<section class="section" id="services">
-  <div class="section-label">Ce que je propose</div>
-  <h2 class="section-title">Des services pensés<br>pour vous</h2>
-  <div class="section-rule"></div>
-  <div class="services-grid">
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="section-label">Prendre contact</div>
+    <h2 class="section-title">Parlons-en</h2>
+    <div class="section-rule" style="margin: 0 auto 1rem;"></div>
+    <p style="font-size:0.9rem; color:var(--slate); line-height:1.8;">Un doute, une question, une panne ? Appelez-moi ou
+      envoyez un email — je vous réponds dans la journée.</p>
 
-    <div class="service-card">
-      <div class="service-icon">01</div>
-      <div class="service-name">Smartphone, tablette &amp; ordinateur</div>
-      <div class="service-desc">Prise en main de votre appareil, réglages, applications du quotidien — à votre rythme.</div>
+    <div class="contact-items">
+      <div class="contact-item">
+        <div class="contact-label">Tél.</div>
+        <div class="contact-divider"></div>
+        <div class="contact-value"><a href="tel:+33618512414">06 18 51 24 14</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Mail</div>
+        <div class="contact-divider"></div>
+        <div class="contact-value"><a href="mailto:contact@etchepare-info.fr">contact@etchepare-info.fr</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Web</div>
+        <div class="contact-divider"></div>
+        <div class="contact-value"><a href="https://letchepare.github.io/etchepare-info/">etchepare-info.fr</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Zone</div>
+        <div class="contact-divider"></div>
+        <div class="contact-value">Pays Basque &amp; Sud des Landes</div>
+      </div>
     </div>
+  </section>
 
-    <div class="service-card">
-      <div class="service-icon">02</div>
-      <div class="service-name">Messagerie, photos &amp; visioappel</div>
-      <div class="service-desc">Rester en contact avec vos proches, partager vos photos, appeler en vidéo.</div>
-    </div>
-
-    <div class="service-card">
-      <div class="service-icon">03</div>
-      <div class="service-name">Démarches en ligne &amp; Doctolib</div>
-      <div class="service-desc">Prise de rendez-vous médicaux, impôts, Ameli, CAF — les services essentiels simplifiés.</div>
-    </div>
-
-    <div class="service-card">
-      <div class="service-icon">04</div>
-      <div class="service-name">Sécurité &amp; mots de passe</div>
-      <div class="service-desc">Reconnaître les arnaques, sécuriser vos comptes, naviguer sereinement sur internet.</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- PROMISE -->
-<div class="promise-band">
-  <div class="promise-text">« À votre rythme, en toute patience — je m'adapte à vous, pas l'inverse. »</div>
-  <div class="promise-author">Lilian Etchepare &mdash; Votre intervenant</div>
-</div>
-
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
-  <div class="section-label">Prendre contact</div>
-  <h2 class="section-title">Parlons-en</h2>
-  <div class="section-rule" style="margin: 0 auto 1rem;"></div>
-  <p style="font-size:0.9rem; color:var(--slate); line-height:1.8;">Un doute, une question, une panne ? Appelez-moi ou envoyez un email — je vous réponds dans la journée.</p>
-
-  <div class="contact-items">
-    <div class="contact-item">
-      <div class="contact-label">Tél.</div>
-      <div class="contact-divider"></div>
-      <div class="contact-value"><a href="tel:+33618512414">06 18 51 24 14</a></div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label">Mail</div>
-      <div class="contact-divider"></div>
-      <div class="contact-value"><a href="mailto:contact@etchepare-info.fr">contact@etchepare-info.fr</a></div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label">Web</div>
-      <div class="contact-divider"></div>
-      <div class="contact-value"><a href="https://letchepare.github.io/etchepare-info/">etchepare-info.fr</a></div>
-    </div>
-    <div class="contact-item">
-      <div class="contact-label">Zone</div>
-      <div class="contact-divider"></div>
-      <div class="contact-value">Pays Basque &amp; Sud des Landes</div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-name">ETCHEPARE INFORMATIQUE</div>
-  <div class="footer-sub">SIRET 887 605 426 00022 &mdash; etchepare-info.fr</div>
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-name">ETCHEPARE INFORMATIQUE</div>
+    <div class="footer-sub">SIRET 887 605 426 00022 &mdash; etchepare-info.fr</div>
+  </footer>
 
 </body>
+
 </html>
